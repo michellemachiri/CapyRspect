@@ -23,3 +23,15 @@ Things you may want to cover:
 
 * ...
 # CapyRspect
+-Create a branch to do the dev work
+-Write feature test
+One the feature test passes with no errors - merge branch with master branch
+
+- visit root page. 
+- click on new article link
+- fill in title
+- fill in body of the article
+-- create article. 
+Expectations:
+-Article has been created. 
+-article path. 

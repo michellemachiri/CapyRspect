@@ -9,6 +9,11 @@
   </head>
 
   <body>
+  <% flash.each do |key, message| %>
+  <div class="text-cetner alert alert-<%= key == 'notice'? 'sucess': 'danger' %>">
+    <%= message %>
+  </div>
+    <%end%>
     <%= yield %>
   </body>
 </html>
