@@ -2,8 +2,9 @@
 <%= @articles.each do |article| %>
   <div class="well well-lg">
     <div class="article-title">
+
 <!--      made the title a link-->
-      <%= link_to article.title, article_path(article) %>s
+      <%= link_to article.title, article_path(article) %>
 
     </div>
     <div class="article-body">
