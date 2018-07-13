@@ -35,3 +35,11 @@ One the feature test passes with no errors - merge branch with master branch
 Expectations:
 -Article has been created. 
 -article path. 
+
+Listing articles feature test. 
+- create branch
+- create 2 articles to display. 
+- Scenario. 
+_ List the two articles. 
+-expect both article titles are bodies to be present. 
+
