@@ -1,12 +1,12 @@
 class ArticlesController < ApplicationController
+  before_action :set_article, only: [:show, :edit, :destroy, :update ]
   def index
     # displays all articles.
     @articles = Article.all
 
-    end
+  end
   def new
     @article = Article.new
-
   end
 
   def create
@@ -18,15 +18,17 @@ class ArticlesController < ApplicationController
         flash.now[:danger] = "Article has not been created"
         render :new
       end
-  end
+
+end
   def show
-    @article = Article.find(params[:id])
+
   end
+
   def edit
-    @article = Article.find(params[:id])
+
   end
   def update
-    @article = Article.find(params[:id])
+
     if @article.update(article_params)
       flash[:success] = "Article has been updated"
       redirect_to @article
@@ -36,6 +38,14 @@ class ArticlesController < ApplicationController
 
 
     end
+    end
+    def destroy
+
+      if @article.destroy
+        flash[:success] = "Article has been deleted"
+        redirect_to articles_path
+
+      end
   end
 protected
   def resource_not_found
@@ -44,10 +54,14 @@ flash[:alert] = message
     redirect_to root_path
   end
   private
+
+  def set_article
+    @article = Article.find(params[:id])
+  end
    def article_params
 
      params.require(:article).permit(:title, :body)
-
    end
 
-end
+  end
+
